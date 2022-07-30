@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faArrowUpRightFromSquare} from '@fortawesome/free-solid-svg-icons'
 
 function About() {
     return (
@@ -34,9 +36,14 @@ function Experience() {
 }
 
 function Resume() {
+    let resumeLink = "https://drive.google.com/file/d/1Ns4EY-H9O0SItTdTk8saTyGQHeyeaMkH/view?usp=sharing"
     return (
         <div class="resume">
-            <h2 class="contentHeader">My Resume</h2>
+            <h2 class="contentHeader">My Resume 
+                <a href={resumeLink} target="_blank">
+                    <FontAwesomeIcon class="nav-icn newtab" icon={faArrowUpRightFromSquare}/>
+                </a>
+            </h2>
             <h3>Profile</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 

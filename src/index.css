@@ -67,6 +67,7 @@
   scrollbar-color: gray var(--tomato) /* TODO: Fix color */
 }
 
+
 .link {
   color: white;
   color: var(--offwhite);
@@ -93,6 +94,17 @@ button.nav:hover {
   width: 20px;
   height: 20px;
   margin: 0px 5px;
+}
+
+.newtab {
+  margin-top: 6px;
+  color: var(--offwhite);
+}
+
+.contentHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /* Mobile Mode */
