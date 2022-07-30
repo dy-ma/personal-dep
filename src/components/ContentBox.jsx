@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import NavButton from './NavButton'
+import { About, Contact, Experience, Resume } from './Pages'
 import { faCow, faAddressCard, faCodeBranch, faFile} from '@fortawesome/free-solid-svg-icons'
 
 function ContentBox(props) {
@@ -14,10 +15,10 @@ function ContentBox(props) {
 
     // Site Content
     let con = <p></p>
-    if (state == 'About') { con = <p>About text</p> }
-    else if (state == 'Contact') { con = <p>Contact text</p> }
-    else if (state == 'Experience') { con = <p>Experience text</p> }
-    else if (state == 'Resume') { con = <p>Resume Image</p> }
+    if (state == 'About') { con = <About/>}
+    else if (state == 'Contact') { con = <Contact/> }
+    else if (state == 'Experience') { con = <Experience/> }
+    else if (state == 'Resume') { con = <Resume/> }
     else { setState('About') }
 
     return (
