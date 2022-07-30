@@ -20,7 +20,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
 }
 
 .App {
@@ -36,6 +35,7 @@
   align-items: center;
   justify-content: space-evenly;
   box-sizing: border-box;
+  transition: width 0.3s; /* Slow down snap width change */
 }
 
 #sidebar, #content {
@@ -51,6 +51,7 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  flex: 0;
 }
 
 #content {
@@ -58,6 +59,8 @@
   width: 70%;
   color:#FFE6D9;
   filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+  /* transition: width 2s;
+  transition-delay: 0.3s; */
 }
 
 button.nav {
@@ -84,10 +87,6 @@ button.nav:hover {
 
 /* Mobile Mode */
 @media screen and (max-width: 600px) {
-  /* .App {
-    background-color: #005167;
-  } */
-
   .main {
     flex-direction: column;
   }
@@ -102,6 +101,12 @@ button.nav:hover {
     margin-bottom: 20px;
   }
 
+  #sidebar {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+
   #content {
     width: 90%;
   }
@@ -110,5 +115,9 @@ button.nav:hover {
 @media screen and (max-width: 350px) {
   #name {
     font-size: 20pt;
+  }
+
+  .main {
+    min-width: 320px; /* Stop shrinking */
   }
 }
