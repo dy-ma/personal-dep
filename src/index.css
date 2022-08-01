@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;700&display=swap');
+
 .App, button {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: Inter, serif;
+  font-family: Avenir, serif;
   font-size: 16px;
+  font-weight: 350;
   line-height: 24px;
-  font-weight: 400;
 }
 
 :root {
@@ -20,6 +24,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  all: unset;
 }
 
 .App {
@@ -59,15 +65,26 @@
 #content {
   background-color: var(--tomato);
   width: 70%;
-  /* padding-left: 20px;
-  padding-right: 20px; */
   padding: 0px 20px;
   color: var(--offwhite);
   filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
   text-align: left;
-  font-weight: 600;
-  overflow-y: auto;
-  scrollbar-color: gray var(--tomato) /* TODO: Fix color */
+  overflow: auto;
+  --scrollbarBG: transparent;
+  --thumbBG: rgba(0, 0, 0, 0.2);
+}
+
+#content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#content::-webkit-scrollbar-track {
+  background: var(--scrollbarBG);
+}
+#content::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 6px;
+  border: 3px solid var(--scrollbarBG);
 }
 
 .link {
