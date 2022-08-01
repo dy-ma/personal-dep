@@ -19,8 +19,8 @@ function Contact() {
             <h2 class="contentHeader">Contact Me</h2>
             <ul>
                 <li>{email.name}@{email.service}.com</li>
-                <li><a class="link" href="https://github.com/stack-dylan">GitHub</a></li>
-                <li><a class="link" href="https://www.linkedin.com/in/dylan-mou-ang/">LinkedIn</a></li>
+                <li><a class="link" target="_blank" href="https://github.com/stack-dylan">GitHub</a></li>
+                <li><a class="link" target="_blank" href="https://www.linkedin.com/in/dylan-mou-ang/">LinkedIn</a></li>
             </ul>
         </div>
     )
