@@ -31,6 +31,7 @@
 .main {
   height: 80vh;
   width: 90vw;
+  max-width: 1000px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -69,10 +70,13 @@
   scrollbar-color: gray var(--tomato) /* TODO: Fix color */
 }
 
-
 .link {
   color: white;
   color: var(--offwhite);
+}
+
+button {
+  all: unset;
 }
 
 button.nav {
@@ -109,6 +113,52 @@ button.nav:hover {
   align-items: center;
 }
 
+.btn-row {
+  display: flex;
+  align-items: center;
+}
+
+.btn-row.column {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.btn-redirect-round {
+  all: unset;
+  background-color: var(--offwhite);
+  color: var(--tomato);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9em;
+  font-size: 10pt;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+}
+
+.btn-redirect-round:hover {
+  background-color: aliceblue;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255,0.5));
+}
+
+.btn-redirect-round:active {
+  background-color: var(--tomato);
+  color: var(--offwhite);
+}
+
+.btn-redirect-round:active>.nav-icn {
+  color: var(--offwhite);
+}
+
+.btn-redirect-round>.nav-icn {
+  color: var(--tomato);
+  height: 15px;
+  margin: 0px;
+}
+
+
 /* Mobile Mode */
 @media screen and (max-width: 600px) {
   .main {
@@ -132,6 +182,20 @@ button.nav:hover {
   }
 
   #content {
+    width: 90%;
+  }
+
+  .btn-row {
+    flex-wrap: wrap;
+  }
+
+  .btn-row.column {
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .btn-redirect-round {
+    box-sizing: border-box;
     width: 90%;
   }
 }

@@ -10,18 +10,31 @@ function About() {
     )
 }
 
+
 function Contact() {
     let email = {};
     email.name = "dylanmouang"
     email.service = "gmail"
+    let githubURL = "https://github.com/stack-dylan";
+    let linkedinURL = "https://www.linkedin.com/in/dylan-mou-ang/";
+
+    let clip = () => {
+        let email = "dylanmouang@gmail.com"
+        navigator.clipboard.writeText("dylanmouang@gmail.com").then(() => {
+            // alert("Copied Email: " + email)
+            let b = document.getElementById("mail-btn")
+            b.textContent = "Email Copied!"
+        })
+    }
+
     return (
         <div class="contact">
             <h2 class="contentHeader">Contact Me</h2>
-            <ul>
-                <li>{email.name}@{email.service}.com</li>
-                <li><a class="link" target="_blank" href="https://github.com/stack-dylan">GitHub</a></li>
-                <li><a class="link" target="_blank" href="https://www.linkedin.com/in/dylan-mou-ang/">LinkedIn</a></li>
-            </ul>
+            <div class="btn-row column">
+                <button id="mail-btn" class="btn-redirect-round" onClick={clip}>Email</button>
+                <a class="btn-redirect-round" target="_blank" href={githubURL}>GitHub</a>
+                <a class="btn-redirect-round" target="_blank" href={linkedinURL}>LinkedIn</a>
+            </div>
         </div>
     )
 }
@@ -36,14 +49,17 @@ function Experience() {
 }
 
 function Resume() {
-    let resumeLink = "https://drive.google.com/file/d/1Ns4EY-H9O0SItTdTk8saTyGQHeyeaMkH/view?usp=sharing"
+    let pdfResume = "https://drive.google.com/file/d/1Ns4EY-H9O0SItTdTk8saTyGQHeyeaMkH/"
+    let docxResume = "https://docs.google.com/document/d/18LHviOqgsqC7gH85q39rG-dBzwq8w-Cx/";
+    let newtabIcon = <FontAwesomeIcon class="nav-icn newtab" icon={faArrowUpRightFromSquare}/>
     return (
         <div class="resume">
             <h2 class="contentHeader">My Resume 
-                <a href={resumeLink} target="_blank">
-                    <FontAwesomeIcon class="nav-icn newtab" icon={faArrowUpRightFromSquare}/>
-                </a>
             </h2>
+            <div class="btn-row">
+                <a class="btn-redirect-round" href={pdfResume} target="_blank">{newtabIcon}Save as PDF</a>
+                <a class="btn-redirect-round" href={docxResume} target="_blank">{newtabIcon}Save as DOCX</a>
+            </div>
             <h3>Profile</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
