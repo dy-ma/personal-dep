@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import NavButton from './NavButton'
 import { About, Contact, Experience, Resume } from './Pages'
 import { faCow, faAddressCard, faCodeBranch, faFile } from '@fortawesome/free-solid-svg-icons'
