@@ -13,10 +13,15 @@
   font-weight: 350;
   line-height: 24px;
 }
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#name {
+  transition: font-size 0.5s;
 }
 
 .main {
@@ -98,6 +103,11 @@ button.nav:hover {
   transition: 0.3s ease-out;
 }
 
+button.nav:active {
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.1s;
+}
+
 .nav-icn {
   width: 20px;
   height: 20px;
@@ -120,42 +130,61 @@ button.nav:hover {
   align-items: center;
 }
 
-.btn-row.column {
-  flex-direction: column;
+.card-row {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .btn-redirect-round {
   all: unset;
-  background-color: var(--offwhite);
-  color: var(--tomato);
-  padding: 10px;
+  /* background-color: var(--offwhite); */
+  background-color: var(--baby);
+  /* color: var(--tomato); */
+  color: var(--navy);
+  padding: 5px;
   margin: 10px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 9em;
+  height: 2em;
   font-size: 10pt;
-  filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
+  font-weight: 800;
+  /* filter: drop-shadow(0 0 3px rgba(0,0,0,0.5)); */
+  transition: width 0.2s;
+  transition: height 0.2s;
 }
 
 .btn-redirect-round:hover {
-  background-color: aliceblue;
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255,0.5));
+  /* background-color: aliceblue; */
+  /* filter: drop-shadow(0 0 5px rgba(255, 255, 255,0.5)); */
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
 }
 
-.btn-redirect-round:active,
+.btn-redirect-round:active {
+  width: 10em;
+  height: 2.5em;
+  transition: width 0.2s;
+  transition: height 0.2s;
+}
+
+/* .btn-redirect-round:active,
 .btn-redirect-round:active>.nav-icn {
   background-color: var(--tomato);
   color: var(--offwhite);
-}
+} */
 
 
-.btn-redirect-round>.nav-icn {
-  color: var(--tomato);
-  height: 15px;
-  margin: 0px;
+.btn-icons {
+  /* color: var(--tomato); */
+  color: var(--navy);
+  height: 1.5em;
+  width: 1.5em;
+  margin: 5px;
 }
 
 
@@ -187,16 +216,24 @@ button.nav:hover {
 
   .btn-row {
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .btn-row.column {
-    /* justify-content: center; */
+  .card-row {
+    flex-direction: column;
     align-items: center;
   }
 
   .btn-redirect-round {
     box-sizing: border-box;
     width: 90%;
+    transition: width 0.2s;
+  }
+
+  .btn-redirect-round:active {
+    width: 100%;
+    height: 2em;
+    transition: width 0.2s;
   }
 }
 
@@ -205,7 +242,7 @@ button.nav:hover {
     font-size: 20pt;
     transition: font-size .5s;
   }
-
+  
   .main {
     min-width: 320px; /* Stop shrinking */
   }
