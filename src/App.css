@@ -163,20 +163,15 @@ button.nav:active {
   /* background-color: aliceblue; */
   /* filter: drop-shadow(0 0 5px rgba(255, 255, 255,0.5)); */
   filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
-}
-
-.btn-redirect-round:active {
   width: 10em;
   height: 2.5em;
   transition: width 0.2s;
   transition: height 0.2s;
 }
 
-/* .btn-redirect-round:active,
-.btn-redirect-round:active>.nav-icn {
-  background-color: var(--tomato);
-  color: var(--offwhite);
-} */
+.btn-redirect-round:active {
+  filter: drop-shadow(0 0 0px rgba(0,0,0,0.5));
+}
 
 
 .btn-icons {
@@ -227,13 +222,19 @@ button.nav:active {
   .btn-redirect-round {
     box-sizing: border-box;
     width: 90%;
+    height: 2.5em;
     transition: width 0.2s;
   }
 
+  .btn-redirect-round:hover {
+    width: 90%;
+  }
+
   .btn-redirect-round:active {
-    width: 100%;
-    height: 2em;
-    transition: width 0.2s;
+    width: 90%;
+    height: 2.5em;
+    background-color: rgba(194, 231, 255, 0.9);
+    /* transition: width 0.2s; */
   }
 }
 
