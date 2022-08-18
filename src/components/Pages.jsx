@@ -7,12 +7,14 @@ import githubProfilePic from "../assets/github-profile.png"
 import linkedinProfilePic from "../assets/linkedin-profile.png"
 import gmailPic from "../assets/gmail-page.png"
 
+import pdf from "../static/resume.pdf"
+
 
 function About() {
     return (
         <div class="about">
             <h2 class="contentHeader">About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Hi, I'm Dylan, a web developer with experience in frontend and backend design with SQLite3, Express, React, and Node. I've developed dashboards (Chart.js) for visualizing interactive data to help engineering teams make smarter decisions in testing. Currently I'm a Bachelors student of CS at UC Davis, projected to graduate in 2024.</p>
         </div>
     )
 }
@@ -39,18 +41,6 @@ function Contact() {
         <div class="contact">
             <h2 class="contentHeader">Contact Me</h2>
             <div class="card-row">
-                {/* <button class="btn-redirect-round" onClick={clip}>
-                    Email
-                    <FontAwesomeIcon class="btn-icons" icon={faAt} />
-                </button>
-                <a class="btn-redirect-round" target="_blank" href={githubURL}>
-                    GitHub
-                    <FontAwesomeIcon class="btn-icons" icon={faGithubAlt} />
-                </a>
-                <a class="btn-redirect-round" target="_blank" href={linkedinURL}>
-                    LinkedIn
-                    <FontAwesomeIcon class="btn-icons" icon={faLinkedin} />
-                </a> */}
                 <a target="_blank" href={githubURL}>
                     <Card image={githubProfilePic}
                         label="Github"
@@ -75,13 +65,16 @@ function Experience() {
     return (
         <div class="experience">
             <h2 class="contentHeader">My Experience</h2>
-            <p>Thanks for Reading!</p>
+            <h4>Applications Engineering Intern, Arista Networks; San Jose, CA — Summer 2022</h4>
+            <p>Wrote a script with Node.js to conditionally extract elements from a list of web pages, saving 4+ hours of manual QA time.  Created a metadata search tool in SalesForce using Flow and Apex to provide sales team faster queries for adjusting records.</p>
+            <h4>Software Team, Formula Racing Team at UCD; Davis, CA — Fall 2020—present</h4>
+            <p>Created a web app to read incoming telemetry data over USB and display it with the C3.js charting library. This tool replaced the previous system of MATLAB graphing scripts with a unified, interactive app. The page is deployed over Github Pages, live charting capabilities are enabled by running the server code on a local machine.</p>
         </div>
     )
 }
 
 function Resume() {
-    let pdfResume = "https://drive.google.com/file/d/1Ns4EY-H9O0SItTdTk8saTyGQHeyeaMkH/"
+    // let pdfResume = "pdf"
     let docxResume = "https://docs.google.com/document/d/18LHviOqgsqC7gH85q39rG-dBzwq8w-Cx/";
     let newtabIcon = <FontAwesomeIcon class="btn-icons" icon={faArrowUpRightFromSquare} />
     return (
@@ -89,12 +82,9 @@ function Resume() {
             <h2 class="contentHeader">My Resume
             </h2>
             <div class="btn-row">
-                <a class="btn-redirect-round" href={pdfResume} target="_blank">{newtabIcon}Save as PDF</a>
+                <a class="btn-redirect-round" href={pdf} target="_blank">{newtabIcon}Save as PDF</a>
                 <a class="btn-redirect-round" href={docxResume} target="_blank">{newtabIcon}Save as DOCX</a>
             </div>
-            <h3>Profile</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
             <h3>Education</h3>
             <ul>
                 <li>University of California, Davis — Computer Science, 2024</li>
@@ -109,7 +99,8 @@ function Resume() {
             </ul>
 
             <h3>Projects</h3>
-            <b>Project name</b>
+            <b>Water Level - 2022</b>
+            <p>A full stack web app using Node and React that displays the water level of several man made reservoirs in California. The  backend is written with Express.js and fetches the data from the CDEC api. The React frontend displays the data in a bar chart with Chart.js and uses react-month-picker for data selection.</p>
 
             <h3>Skills</h3>
             <ul>
